@@ -3,13 +3,46 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.terminal textarea {
+.terminal {
   width: 100%;
   height: 100%;
   margin: 10% 0%;
   max-height: 400px;
   background: #333;
   color: white;
+  position: relative;
+  padding-top: 15px;
+  p {
+    padding-left: 30px;
+  }
+
+  .history {
+    overflow: scroll;
+    height: 85%;
+  }
+}
+
+.terminal input[type="text"] {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 80%;
+  width: 100%;
+  border: none;
+  background-color: #333;
+  padding-left: 30px;
+}
+
+.terminal input[type="text"]:focus {
+  border: none;
+}
+
+// this is so hacky - please fix it.
+.terminal .prompt {
+  position: absolute;
+  bottom: 23px;
+  left: 5px;
+  z-index: 5;
 }
 
 .instructions {
