@@ -1,0 +1,2 @@
+class SecretPassage < ApplicationRecord
+end
