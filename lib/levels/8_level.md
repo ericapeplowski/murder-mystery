@@ -1,15 +1,14 @@
 -title-
-  Level Three
+  Level Eight
 
 -instructions-
-  Getting all of the records in a table can be super handy. But active record
-  is really great at getting specific information out of the database. To start
-  really solving this murder mystery - we need to find out who exactly our victim is.
-  On our Suspects table, there is a column called 'alive'. Search the table to find
-  the suspect where this value is set to false.
+  Great work! While we are searching our records, we've rounded up all the
+  objects we found that could have been used as the murder weapon. We've catalogued
+  and stored them into a Weapons table. Use the .all method to see all of the
+  weapons.
 
 -example-
-  Users.find_by(name: "Martin")
+  Location.all
 
 -correct_code-
-  Suspect.find_by(alive: false)
+  Weapons.all

@@ -1,15 +1,14 @@
 -title-
-  Level Three
+  Level Seven
 
 -instructions-
-  Getting all of the records in a table can be super handy. But active record
-  is really great at getting specific information out of the database. To start
-  really solving this murder mystery - we need to find out who exactly our victim is.
-  On our Suspects table, there is a column called 'alive'. Search the table to find
-  the suspect where this value is set to false.
-
+  We can use find_by to search our tables for one specific record. find_by
+  will return the first record that matches the search results. But what if
+  we want to return ALL of the records that match our query? In this case: .where
+  is the best method to use. Use the where method to find all of the Suspects
+  with the last name Meadow-Brook
 -example-
-  Users.find_by(name: "Martin")
+  Location.where(secret_passage: true)
 
 -correct_code-
-  Suspect.find_by(alive: false)
+  Suspect.where(last_name: "Meadow-Brook")
