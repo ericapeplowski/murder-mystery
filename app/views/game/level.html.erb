@@ -12,6 +12,7 @@
       <p><%= @level.instructions %></p>
       <p>Example:</p>
       <p><%= @level.example %></p>
+      <a href="/level/<%= @level.id + 1 %>" class="hidden-button" id="next-level-button"><button>Next</button></a>
     </div>
   </div>
 </div>

@@ -13,29 +13,30 @@ module LevelFactory
     # t.string   "example"
     # t.string   "correct_code"
 
-  # TODO: possibly move in Markdown files and parse to make the levels easier
-  # to edit?
-
-  def all_levels
-    @level_one = {
-      title: "Level One",
-      instructions: "Use ActiveRecord to find all of the suspects.
-                     (Hint, active record lets you get all of the records in a table
-                     by calling #all on that model name.)",
-      example: "If you had a table of cats and wanted to see all of the records
-                you could type Cat.all",
-      correct_code: "Suspect.all"
-    }
-
-    @level_two = {
-      title: "Level Two",
-      instructions: "Great! To further our investigation we also need to see all of
-                    the locations in the mansion. Query the table to get a list of
-                    the locations.",
-      example: "Song.all would give you all the songs in a songs table.",
-      correct_code: "Location.all"
-    }
-
-    [@level_one, @level_two]
+  def all_levels(dir_name)
+    all_levels = []
+    Dir.foreach(dir_name) do |level|
+      next if level != '1_level.md'
+      hash = md_to_level_hash(dir_name + "/" + level)
+      all_levels.push(hash)
+    end
+    all_levels
   end
+
+  private
+  def md_to_level_hash(file_name)
+    contents = File.read(file_name)
+    split = contents.strip.split("-").select { |l| l != ""}
+    final_index = split.length - 1
+
+    level_hash = {}
+    i = 0
+    while i <= final_index
+      level_hash[split[i]] = split[i + 1]
+      i += 2
+    end
+
+    return level_hash
+  end
+
 end

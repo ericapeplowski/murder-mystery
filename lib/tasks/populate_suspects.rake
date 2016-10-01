@@ -23,3 +23,11 @@ namespace :populate do
     all_levels.each    { |l| Level.create(l) }
   end
 end
+
+namespace :populate do
+  desc "testing some code"
+  task :test_levels => :environment do
+    dir_name = File.join(Rails.root, "lib", "levels")
+    all_levels(dir_name).each do { |l| Level.create(l) }
+  end
+end
