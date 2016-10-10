@@ -3,7 +3,7 @@
 
 -instructions-
   Great! To further our investigation we also need to see all of
-  the locations in the mansion. Query the table to get a list of
+  the <strong>locations</strong> in the mansion. Query the table to get a list of
   the locations.
 
 -example-

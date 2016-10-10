@@ -16,7 +16,8 @@ module LevelFactory
   def all_levels(dir_name)
     all_levels = []
     Dir.foreach(dir_name) do |level|
-      next if level != '1_level.md'
+      puts level
+      next if level == '.' || level == ".."
       hash = md_to_level_hash(dir_name + "/" + level)
       all_levels.push(hash)
     end

@@ -2,11 +2,9 @@
   Level Six
 
 -instructions-
-  Getting all of the records in a table can be super handy. But active record
-  is really great at getting specific information out of the database. To start
-  really solving this murder mystery - we need to find out who exactly our victim is.
-  On our Suspects table, there is a column called 'alive'. Search the table to find
-  the suspect where this value is set to false.
+  Hmm... so if the secret passage in the lounge leads to the kitchen. It's likely
+  our murderer escaped that way. Let's see which Suspects were in the kitchen
+  when the police showed up.
 
 -example-
   Users.find_by(name: "Martin")
