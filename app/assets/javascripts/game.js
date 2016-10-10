@@ -4,13 +4,13 @@
 $(document).ready(function() {
   var main  = '.terminal';
   var input = '.terminal input';
-  var log   = '.terminal .history'
+  var log   = '.terminal .history';
 
   // ==========
   // LISTENERS
   // ==========
 
-  $(input).keydown(function(e) {
+  $(document).on('keydown', input, function(e) {
     if (e.keyCode == 13) {
       var command = $(this).val()
       printToTerminal(command);
@@ -19,10 +19,13 @@ $(document).ready(function() {
     }
   });
 
-  $(main).click(function(e) {
+  $(document).on('click', main, function(e) {
     $(input).focus();
   });
 
+  $(document).on('click', '#start-game', function() {
+    window.location.pathname = "/level/1"
+  })
   // ========
   // HELPERS
   // ========
